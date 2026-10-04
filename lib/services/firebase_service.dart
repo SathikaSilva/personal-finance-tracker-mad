@@ -3,8 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../models/subscription.dart';
 
-/// Firebase Service with Cloud Firestore & Authentication
-/// Clean, beginner-friendly (lecturer style)
+// Service handling Firebase Authentication and Cloud Firestore operations
 class AppFirebaseService {
   static final AppFirebaseService _instance = AppFirebaseService._internal();
   factory AppFirebaseService() => _instance;
@@ -17,11 +16,11 @@ class AppFirebaseService {
   FirebaseAuth get _auth => FirebaseAuth.instance;
   FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
-  // In-memory list for demo/preview when Firebase is not connected
+  // Local list used as fallback when running offline
   final List<Subscription> _previewList = [];
   final StreamController<List<Subscription>> _previewStream = StreamController<List<Subscription>>.broadcast();
 
-  // ================= HELPER: FORMAT / RESOLVE USER NAME =================
+  // Helper method to format and display the user's name
   static String formatName(User? user, [String? dbName]) {
     // 1. Check if database has a custom name
     if (dbName != null && dbName.trim().isNotEmpty && dbName.trim().toLowerCase() != "user") {
@@ -51,7 +50,7 @@ class AppFirebaseService {
     return "User";
   }
 
-  // ================= AUTH =================
+  // Authentication methods
   User? get currentUser => isFirebaseInitialized ? _auth.currentUser : null;
   Stream<User?> get authStateChanges => isFirebaseInitialized ? _auth.authStateChanges() : Stream.value(null);
 
@@ -130,9 +129,7 @@ class AppFirebaseService {
     return (doc.exists && doc.data() != null) ? doc.data() : null;
   }
 
-  // ================= CLOUD FIRESTORE CRUD =================
-
-  // CREATE
+  // Subscription database operations (CRUD)
   Future<void> addSubscription(String uid, Subscription sub) async {
     if (!isFirebaseInitialized) {
       _previewList.insert(0, sub.copyWith(id: DateTime.now().millisecondsSinceEpoch.toString()));

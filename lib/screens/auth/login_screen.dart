@@ -5,8 +5,7 @@ import '../home_nav_screen.dart';
 import 'forgot_password_screen.dart';
 import 'register_screen.dart';
 
-/// Login Screen
-/// Simple, clean, beginner-friendly code following lecturer style
+// Login screen for authenticating existing users with email and password
 class LoginScreen extends StatefulWidget {
   final VoidCallback? toggleTheme;
   final bool isDarkMode;
@@ -22,7 +21,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // Simple text controllers and boolean variables (lecturer style)
+  // Text editing controllers for the form inputs
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -36,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  // Simple login function
+  // Handle user sign-in with Firebase
   void handleLogin() async {
     // 1. Validation check
     if (emailController.text.trim().isEmpty || passwordController.text.trim().isEmpty) {

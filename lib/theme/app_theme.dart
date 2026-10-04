@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// App Theme & Colors
-/// Compact, simple, beginner-friendly
+// Application color palette and Material 3 theme configurations
 class AppColors {
   static const Color primary = Color(0xFF52758A);
   static const Color lightBg = Color(0xFFF8FAFC);

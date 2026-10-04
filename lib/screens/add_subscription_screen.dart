@@ -9,8 +9,7 @@ import '../services/firebase_service.dart';
 import '../theme/app_theme.dart';
 import '../widgets/category_badge.dart';
 
-/// Add Subscription Screen
-/// Short, clean, beginner-friendly (lecturer style)
+// Screen for creating and adding a new subscription
 class AddSubscriptionScreen extends StatefulWidget {
   final VoidCallback? onSubscriptionSaved;
   final VoidCallback? toggleTheme;

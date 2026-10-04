@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import '../../services/firebase_service.dart';
 import '../../theme/app_theme.dart';
 
-/// Forgot Password Screen
-/// Simple, clean, beginner-friendly (lecturer style)
+// Screen for sending password reset emails
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
 

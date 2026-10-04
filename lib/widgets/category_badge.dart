@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
-/// Category Helpers & Item Widget
+// Helper class for subscription categories, icons, and colors
 class CategoryHelper {
   static const List<String> categories = [
     'Entertainment',

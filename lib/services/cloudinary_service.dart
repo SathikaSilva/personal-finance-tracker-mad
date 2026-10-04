@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-/// Simple Cloudinary Image Upload Service
+// Service to upload receipt images to Cloudinary via HTTP multipart request
 class CloudinaryService {
   static const String cloudName = 'YOUR_CLOUDINARY_CLOUD_NAME';
   static const String uploadPreset = 'personal_finance_receipts';

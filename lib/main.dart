@@ -8,7 +8,7 @@ import 'theme/app_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Firebase (wrapped in try-catch so app runs even before credentials are added)
+  // Initialize Firebase services
   try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
@@ -30,18 +30,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // Simple boolean to track dark mode state (Lecturer style)
+  // Theme state: true for dark mode, false for light mode
   bool isDarkMode = false;
 
   @override
   void initState() {
     super.initState();
-    // Check device system theme on startup (lecturer style)
+    // Detect system theme setting on startup
     final systemBrightness = WidgetsBinding.instance.platformDispatcher.platformBrightness;
     isDarkMode = (systemBrightness == Brightness.dark);
   }
 
-  // Simple function to toggle theme
+  // Toggle theme between light and dark
   void toggleTheme() {
     setState(() {
       isDarkMode = !isDarkMode;

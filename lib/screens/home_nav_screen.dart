@@ -6,11 +6,7 @@ import 'dashboard_screen.dart';
 import 'edit_subscription_screen.dart';
 import 'profile_screen.dart';
 
-/// App Host Screen with Fixed Bottom Navigation Bar (4 Main Pages)
-/// 1. Dashboard
-/// 2. Add Subscription
-/// 3. Edit Subscription
-/// 4. Profile
+// Main navigation container managing the bottom navigation bar
 class HomeNavScreen extends StatefulWidget {
   final VoidCallback? toggleTheme;
   final bool isDarkMode;
@@ -26,22 +22,22 @@ class HomeNavScreen extends StatefulWidget {
 }
 
 class _HomeNavScreenState extends State<HomeNavScreen> {
-  // Simple integer variable to keep track of active tab (lecturer style)
+  // Current active tab index
   int currentIndex = 0;
   Subscription? selectedSubscription;
 
-  // Simple function to switch tabs using setState
+  // Switch between tabs
   void changeTab(int index) {
     setState(() {
       currentIndex = index;
     });
   }
 
-  // Master/Detail: Navigate directly to Edit screen with selected subscription
+  // Open the edit screen pre-filled with the selected subscription
   void openEditSubscription(Subscription sub) {
     setState(() {
       selectedSubscription = sub;
-      currentIndex = 2; // Switch to Edit Subscription tab
+      currentIndex = 2; // Switch to Edit tab
     });
   }
 

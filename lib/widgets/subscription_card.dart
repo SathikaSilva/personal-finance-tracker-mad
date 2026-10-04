@@ -5,8 +5,7 @@ import '../services/currency_api_service.dart';
 import '../theme/app_theme.dart';
 import 'category_badge.dart';
 
-/// Subscription Card Widget
-/// Clean, simple, beginner-friendly card (lecturer style)
+// Card widget to display subscription details with category icon, cost, renewal countdown, and action buttons
 class SubscriptionCard extends StatefulWidget {
   final Subscription subscription;
   final VoidCallback? onEdit;

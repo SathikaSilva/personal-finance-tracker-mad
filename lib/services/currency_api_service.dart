@@ -1,11 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-/// Simple External API Service
-/// 1. Currency Exchange API: converts USD, EUR, etc. into LKR
-/// 2. Daily Tip API: fetches daily advice for the dashboard
+// Service to fetch currency exchange rates and daily financial tips from REST APIs
 class CurrencyApiService {
-  // List of currencies for the dropdown
+  // Supported currencies available in the app
   static const List<String> supportedCurrencies = [
     'LKR',
     'USD',
@@ -15,10 +13,10 @@ class CurrencyApiService {
     'INR',
   ];
 
-  // Cache to store rates so we don't repeat network calls
+  // In-memory cache for exchange rates to reduce redundant network calls
   static final Map<String, double> _cachedRates = {};
 
-  // Simple function to get exchange rate to LKR using HTTP GET
+  // Fetch exchange rate to LKR from the exchange rate API
   static Future<double> getExchangeRateToLkr(String fromCurrency) async {
     final currency = fromCurrency.toUpperCase().trim();
 

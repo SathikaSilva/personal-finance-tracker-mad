@@ -3,8 +3,8 @@ import '../services/firebase_service.dart';
 import '../theme/app_theme.dart';
 import 'auth/login_screen.dart';
 
-/// Profile Screen
-/// Clean, beginner-friendly 
+// Profile screen where users can view their account details,
+// update their display name, change their password, and sign out
 class ProfileScreen extends StatefulWidget {
   final VoidCallback? toggleTheme;
   final bool isDarkMode;

@@ -3,8 +3,7 @@ import '../../services/firebase_service.dart';
 import '../../theme/app_theme.dart';
 import '../home_nav_screen.dart';
 
-/// Register Screen
-/// Simple, clean, beginner-friendly code following lecturer style
+// Registration screen for creating new user accounts
 class RegisterScreen extends StatefulWidget {
   final VoidCallback? toggleTheme;
   final bool isDarkMode;
@@ -20,7 +19,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  // Simple text controllers and boolean variables (lecturer style)
+  // Text controllers for registration input fields
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -38,7 +37,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
-  // Simple registration handler
+  // Handle user account registration
   void handleRegister() async {
     // 1. Basic validation
     if (nameController.text.trim().isEmpty ||

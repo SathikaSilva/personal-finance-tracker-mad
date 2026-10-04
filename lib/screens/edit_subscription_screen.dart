@@ -10,8 +10,7 @@ import '../theme/app_theme.dart';
 import '../widgets/category_badge.dart';
 import '../widgets/subscription_card.dart';
 
-/// Edit Subscription Screen (Master/Detail Flow)
-/// Short, clean, beginner-friendly (lecturer style)
+// Screen for viewing and editing subscription details
 class EditSubscriptionScreen extends StatefulWidget {
   final Subscription? initialSubscriptionToEdit;
   final VoidCallback? onClearedSelection;

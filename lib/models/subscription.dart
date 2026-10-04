@@ -1,4 +1,4 @@
-/// Simple Subscription Data Model
+// Data model representing a user subscription record
 class Subscription {
   final String id;
   final String name;
@@ -20,7 +20,7 @@ class Subscription {
     required this.createdAt,
   });
 
-  // Convert Firebase Map to Subscription object
+  // Construct a Subscription instance from a database map
   factory Subscription.fromMap(String id, Map<dynamic, dynamic> map) {
     return Subscription(
       id: id,
@@ -34,7 +34,7 @@ class Subscription {
     );
   }
 
-  // Convert Subscription object to Map for Firebase
+  // Convert a Subscription instance into a map for database storage
   Map<String, dynamic> toMap() => {
         'name': name,
         'category': category,

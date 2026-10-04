@@ -7,8 +7,8 @@ import '../theme/app_theme.dart';
 import '../widgets/category_badge.dart';
 import '../widgets/subscription_card.dart';
 
-/// Dashboard Screen
-/// Compact, simple, beginner-friendly (lecturer style)
+// Main Dashboard screen displaying total monthly spending,
+// upcoming renewal dates, category breakdown, and daily tip
 class DashboardScreen extends StatefulWidget {
   final Function(int tabIndex)? onNavigateTab;
   final Function(Subscription sub)? onEditSubscription;
@@ -124,10 +124,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
             builder: (context, spendSnap) {
               final total = spendSnap.data ?? 0.0;
 
-              // Responsive Layout using OrientationBuilder (Lecturer style)
+              // Adapt layout based on device orientation (portrait vs landscape)
               return OrientationBuilder(
                 builder: (context, orientation) {
-                  // 1. Landscape Layout: Distinct 2-column view
+                  // 1. Landscape Layout: 2-column view
                   if (orientation == Orientation.landscape) {
                     return SingleChildScrollView(
                       padding: const EdgeInsets.only(top: 8, bottom: 24),
@@ -198,9 +198,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 
-  // ================= HELPER WIDGETS (LECTURER STYLE) =================
-
-  // 1. Daily Tip Banner
+  // Build the daily tip banner
   Widget _buildTipBanner() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -241,7 +239,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 
-  // 3. Total Monthly Spending Card with AnimatedSwitcher (Lecturer style)
+  // Build total monthly spending card with animated transition
   Widget _buildSpendingCard(double total) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16),
