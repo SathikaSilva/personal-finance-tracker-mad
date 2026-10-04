@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 // Service to upload receipt images to Cloudinary via HTTP multipart request
 class CloudinaryService {
-  static const String cloudName = 'YOUR_CLOUDINARY_CLOUD_NAME';
+  static const String cloudName = 'uwdycd84';
   static const String uploadPreset = 'personal_finance_receipts';
 
   static bool get isConfigured =>
